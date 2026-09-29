@@ -71,7 +71,7 @@ def save_plot(fig, save_folder, abf_id):
     return full_save_path
 #execution block
 def main():
-    abfs = get_abfs(r"C:\Users\joego\Desktop\abfPlotterInput")
+    abfs = get_abfs(#INPUT FOLDER PATH HERE#)
     drug_map = drug_dictionaries()
     for file in abfs:
         sweeps = sweep_numbers(file)
@@ -83,7 +83,7 @@ def main():
         log_text = build_log_text(file.abfID, tagged_events, drug_map)
         add_log_text(fig, log_text)
         plt.tight_layout(rect=[0, 0, 0.75, 1])
-        save_plot(fig, r"C:\Users\joego\Desktop\abfPlotterOutput", file.abfID)
+        save_plot(fig, #OUTPUT FOLDER PATH HERE#, file.abfID)
         print(f"Processed {file.abfID}")
 if __name__ == "__main__":
     main()
